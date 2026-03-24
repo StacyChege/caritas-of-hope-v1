@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-caritas-magenta: #EC008C;
+  --color-caritas-blue: #325BBA;
+  --color-caritas-green: #1a7a40;
+  --color-caritas-red: #C02B2B;
+}
