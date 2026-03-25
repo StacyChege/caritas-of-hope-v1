@@ -4,6 +4,7 @@ export default function Navbar() {
             <h1>Caritas of Hope Foundation</h1>
             <ul>
                 <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
                 <li><a href="/programs">Programs</a></li>
                 <li><a href="/team">Team</a></li>
                 <li><a href="/testimonials">Testimonials</a></li>

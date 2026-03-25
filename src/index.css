@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-caritas-magenta: #EC008C;
-  --color-caritas-blue: #325BBA;
-  --color-caritas-green: #1a7a40;
-  --color-caritas-red: #C02B2B;
+  --color-caritas-magenta: #D91A5B;
+  --color-caritas-blue: #3498DB;
+  --color-caritas-green: #2ECC71;
+  --color-caritas-red: #E74C3C;
+  --caritas-magenta-light: #F8E5ED;
+  --caritas-green-light: #E8F8F0;
+  --caritas-blue-light: #EBF5FB;
+  --caritas-red-light: #FADBD8;
 }
