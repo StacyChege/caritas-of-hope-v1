@@ -42,10 +42,6 @@ export default function HeroBanner() {
                     </Link>
                 </div>
             </div>
-
-
-           
-
         </section>
     )
 }
