@@ -16,6 +16,7 @@ export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false)
 
+
     const[scrolled, setScrolled] = useState(false)
 
     useEffect(() => {
@@ -25,6 +26,8 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
     }, []) // Empty array means "run this effect only once on mount"
+
+    const closeMenu = () => setIsOpen(false)
 
     return (
         <nav className={"fixed top-0 left-0 right-0 z-50 transition-all duration-300" + (scrolled? "bg-white shadow" : "bg-transparent")}>
@@ -43,14 +46,15 @@ export default function Navbar() {
 
                         {/* Organisation Name. 
                              The colour changes based on scrollstate */}
-                             <span className={"text-lg font-bold leading-tight " + (scrolled ? "text-caritas-blue" : "text-white")}>
+                             <span className={"text-lg font-bold leading-tight  " + (scrolled ? "text-caritas-blue" : "text-white")}>
                                 Caritas of <br /> Hope <br /> Foundation
                              </span>
                     </Link>
 
                     {/* Centre: Desktop Nav Links */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden  place-content-center md:flex justify-center items-center p-4 gap-10">
                         {navLinks.map((link) => (
+                    
                             <NavLink
                                 key={link.path}
                                 to={link.path}
@@ -67,7 +71,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Right: Donate Button + Humburger */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col justify-center w-10 h-10 ml-auto md:hidden items-center gap-4">
 
                         {/* Donate Button */}
                         <Link 
@@ -79,7 +83,7 @@ export default function Navbar() {
                         {/* Hamburger/ Close Button */}
                         <button
                           onClick={() => setIsOpen(!isOpen)}
-                          className={"md:hidden p-2 rounded-md transition " + 
+                          className={"flex flex-col items-center justify-center w-10 h-10 ml-auto md:hidden p-2 rounded-md transition " + 
                             (scrolled ? "text-caritas-blue " : "text-white")
                           }
                            // aria-label tells screen readers what this button does
@@ -96,7 +100,39 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Dropdown Menu */}
-            
+            {isOpen && (
+                <div className="md:hidden bg-white border-t border-gray-100 shadow-lg absolute z-50 text-gray-800">
+                    <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+
+                        {navLinks.map((link) => (
+                            <NavLink
+                                key={link.path}
+                                to={link.path}
+                                end={link.path === "/"}
+                                onClick={closeMenu} 
+                                className={({ isActive }) => 
+                                    "block px-4 py-3 rounded-lg text-sm font-medium transition " + 
+                                    (isActive ? 
+                                        "bg-caritas-magenta text-white" 
+                                        : "text-gray-700 hover:bg-gray-50 hover:text-caritas-magenta"
+                                    )}
+                            >
+                                {link.name}
+                            </NavLink>
+                        ))}
+
+                        {/* Mobile Donate Button */}
+                        <Link
+                        to="/contact"
+                        className="mt-2 block text-center bg-caritas-blue hover:bg-opacity-90
+                         text-white px-6 py-3 rounded-full text-sm font-semibold transition "
+                           >
+                            Donate Now
+                        </Link>
+                    </div>
+                </div>
+            )}
+
         </nav>
     )
 
