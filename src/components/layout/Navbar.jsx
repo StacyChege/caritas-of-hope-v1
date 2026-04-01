@@ -52,7 +52,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Centre: Desktop Nav Links */}
-                    <div className="hidden  place-content-center md:flex justify-center items-center p-4 gap-10">
+                    <div className="hidden md:flex flex-1 justify-center items-center p-4 gap-10">
                         {navLinks.map((link) => (
                     
                             <NavLink
@@ -124,6 +124,7 @@ export default function Navbar() {
                         {/* Mobile Donate Button */}
                         <Link
                         to="/contact"
+                        onClick ={closeMenu}
                         className="mt-2 block text-center bg-caritas-blue hover:bg-opacity-90
                          text-white px-6 py-3 rounded-full text-sm font-semibold transition "
                            >

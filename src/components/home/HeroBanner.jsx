@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function HeroBanner() {
     return (
         <section 
-        className = "relative min-h-screen bg-caritas-magenta flex flex-col items-center justify-center text-white text-center px-4 py-20">
+        className = "relative min-h-screen bg-caritas-magenta flex flex-col items-center justify-center text-white text-center px-4 py-20 pt-20 md:pt-24">
             <div className = "absolute inset-0 bg-black opacity-30" />
 
             {/* Content container */}
