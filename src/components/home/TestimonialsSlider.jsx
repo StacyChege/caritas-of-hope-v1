@@ -44,13 +44,13 @@ export default function TestimonialsGrid() {
                                 <span className="text-caritas-magenta text-5xl font-serif leading-none">"</span>
 
                                 {/* Quote text */}
-                                <p className="text-gray-600 leading-relaxed mt-2 mb-6 italic flex-grow">
+                                <p className="text-gray-600 leading-relaxed mt-2 mb-6 italic grow">
                                     {t.quote}
                                 </p>
 
                                 {/* Person Row */}
                                 <div className="flex items-center gap-4 border-t border-gray-200 pt-6">
-                                    <div className="w-12 h-12 rounded-full bg-caritas-blue flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                                    <div className="w-12 h-12 rounded-full bg-caritas-blue flex items-center justify-center text-white font-bold text-lg shrink-0">
                                         {t.name[0]}
                                     </div>
                                     <div>
